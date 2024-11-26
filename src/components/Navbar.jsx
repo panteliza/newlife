@@ -33,32 +33,26 @@ const Navbar = () => {
   const toggleDropdown = () => setShowDropdown(!showDropdown);
   const toggleSidebar = () => setShowSidebar(!showSidebar);
 
-  const renderLinks = (style) =>
-    navLinks.map(({ path, label }) => (
-      <Link key={path} to={path} className={style} onClick={() => setShowSidebar(false)}>
-        {label}
-      </Link>
-    ));
-
   const renderServicesDropdown = () => (
-    showDropdown && (
-      <div className="absolute top-12 bg-white p-2 grid grid-cols-1 sm:grid-cols-2 gap-2 z-[1] shadow-lg rounded-lg w-[250px]">
-        {services.map(({ path, label }) => (
-          <Link
-            key={path}
-            to={path}
-            className="block bg-gray-100 hover:bg-[#07A2BB] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
-            onClick={() => setShowDropdown(false)}
-          >
-            {label}
-          </Link>
-        ))}
-      </div>
-    )
+    <div className="bg-white mt-2 rounded-lg shadow-lg">
+      {services.map(({ path, label }) => (
+        <Link
+          key={path}
+          to={path}
+          className="block bg-gray-100 hover:bg-[#07A2BB] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+          onClick={() => {
+            setShowDropdown(false);
+            setShowSidebar(false);
+          }}
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
   );
 
   return (
-    <nav className="w-full bg-white shadow-md px-6  flex justify-between items-center">
+    <nav className="w-full bg-white shadow-md px-6 flex justify-between items-center">
       {/* Logo */}
       <Link to="/">
         <img
@@ -68,28 +62,49 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center gap-8 text-lg">
-        <Link to="/" className="text-[#099BA4] font-medium hover:text-[#99BF1A]">
-          Home
-        </Link>
-        <div
-          className="relative text-gray-700 cursor-pointer hover:text-[#99BF1A]"
-          onClick={toggleDropdown}
-        >
-          <div className="flex items-center gap-1">
-            <span>Services</span>
-            {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
-          </div>
-          {renderServicesDropdown()}
-        </div>
-        {renderLinks('text-gray-700 hover:text-pink-400')}
-        <div className="flex gap-4">
-          <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
-          <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
-          <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
-        </div>
+    {/* Desktop Navigation */}
+<div className="hidden lg:flex items-center gap-8 text-lg">
+  <Link to="/" className="text-[#099BA4] font-medium hover:text-[#038A58]">
+    Home
+  </Link>
+  <div
+    className="relative text-gray-700 cursor-pointer hover:text-[#038A58]"
+    onClick={toggleDropdown} // Toggle dropdown on click
+  >
+    <div className="flex items-center gap-1">
+      <span>Services</span>
+      {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
+    </div>
+    {showDropdown && (
+      <div className="absolute top-12 bg-white p-2 grid grid-cols-1 sm:grid-cols-2 gap-2 z-[1] shadow-lg rounded-lg w-[250px]">
+        {services.map(({ path, label }) => (
+          <Link
+            key={path}
+            to={path}
+            className="block bg-gray-100 hover:bg-[#07A2BB] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+            onClick={() => setShowDropdown(false)} // Close dropdown on link click
+          >
+            {label}
+          </Link>
+        ))}
       </div>
+    )}
+  </div>
+  {navLinks.map(({ path, label }) => (
+    <Link
+      key={path}
+      to={path}
+      className="text-gray-700 hover:text-[#07A2BB] transition-all"
+    >
+      {label}
+    </Link>
+  ))}
+  <div className="flex gap-4">
+    <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
+    <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
+    <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
+  </div>
+</div>
 
       {/* Mobile Menu Button */}
       <HiOutlineMenuAlt2 className="text-3xl lg:hidden cursor-pointer" onClick={toggleSidebar} />
@@ -112,17 +127,30 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <div className="py-3 px-6 border-b border-gray-200 cursor-pointer hover:bg-gray-100">
-            <div
-              className="flex justify-between items-center"
+          <div className="border-b border-gray-200 px-6">
+            <button
               onClick={toggleDropdown}
+              className="flex justify-between items-center w-full py-3 text-gray-700 hover:bg-gray-100"
             >
-              <span className="text-gray-700">Services</span>
+              <span>Services</span>
               {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
-            </div>
-            {renderServicesDropdown()}
+            </button>
+            {showDropdown && (
+              <div className="mt-2">
+                {renderServicesDropdown()}
+              </div>
+            )}
           </div>
-          {renderLinks('py-3 px-6 border-b border-gray-200 hover:bg-gray-100')}
+          {navLinks.map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className="py-3 px-6 border-b border-gray-200 hover:bg-[#07A2BB]"
+              onClick={toggleSidebar}
+            >
+              {label}
+            </Link>
+          ))}
           <div className="flex justify-center gap-4 mt-4 px-6">
             <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
             <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
