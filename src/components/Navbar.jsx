@@ -41,25 +41,31 @@ const Navbar = () => {
     ));
 
   const renderServicesDropdown = () => (
-    <div className="absolute top-12 bg-white p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 z-[1] shadow-lg rounded-lg w-[300px]">
-      {services.map(({ path, label }) => (
-        <Link
-          key={path}
-          to={path}
-          className="block bg-gray-100 hover:bg-pink-100 text-gray-700 text-center py-4 px-2 rounded-md shadow transition-all"
-          onClick={() => setShowSidebar(false)}
-        >
-          {label}
-        </Link>
-      ))}
-    </div>
+    showDropdown && (
+      <div className="absolute top-12 bg-white p-2 grid grid-cols-1 sm:grid-cols-2 gap-2 z-[1] shadow-lg rounded-lg w-[250px]">
+        {services.map(({ path, label }) => (
+          <Link
+            key={path}
+            to={path}
+            className="block bg-gray-100 hover:bg-pink-100 text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+            onClick={() => setShowDropdown(false)}
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
+    )
   );
 
   return (
     <nav className="w-full bg-white shadow-md px-6 py-4 flex justify-between items-center">
       {/* Logo */}
       <Link to="/">
-        <img src={logo} alt="Shubhashree IVF Clinic" className="h-[80px] object-contain" />
+        <img
+          src={logo}
+          alt="Shubhashree IVF Clinic"
+          className="h-[130px] object-contain transition-transform duration-300 hover:scale-110"
+        />
       </Link>
 
       {/* Desktop Navigation */}
@@ -69,18 +75,19 @@ const Navbar = () => {
         </Link>
         <div
           className="relative text-gray-700 cursor-pointer hover:text-pink-400"
-          onMouseEnter={toggleDropdown}
-          onMouseLeave={toggleDropdown}
+          onClick={toggleDropdown}
         >
-          <span>Services</span>
-          {showDropdown ? <AiOutlineUp className="inline ml-1" /> : <AiOutlineDown className="inline ml-1" />}
-          {showDropdown && renderServicesDropdown()}
+          <div className="flex items-center gap-1">
+            <span>Services</span>
+            {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
+          </div>
+          {renderServicesDropdown()}
         </div>
         {renderLinks('text-gray-700 hover:text-pink-400')}
         <div className="flex gap-4">
-          <img src={img1} alt="Icon 1" className="h-[50px] w-[50px] object-contain" />
-          <img src={img2} alt="Icon 2" className="h-[50px] w-[50px] object-contain" />
-          <img src={img3} alt="Icon 3" className="h-[50px] w-[50px] object-contain" />
+          <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
+          <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
+          <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
         </div>
       </div>
 
@@ -91,7 +98,11 @@ const Navbar = () => {
       {showSidebar && (
         <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-[2] flex flex-col">
           <div className="flex justify-between items-center px-6 py-4">
-            <img src={logo} alt="Shubhashree IVF Clinic" className="h-[70px] object-contain" />
+            <img
+              src={logo}
+              alt="Shubhashree IVF Clinic"
+              className="h-[100px] object-contain transition-transform duration-300 hover:scale-110"
+            />
             <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
           </div>
           <Link
@@ -101,31 +112,21 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <div className="py-3 px-6 border-b border-gray-200 cursor-pointer hover:bg-gray-100" onClick={toggleDropdown}>
-            <div className="flex justify-between items-center">
+          <div className="py-3 px-6 border-b border-gray-200 cursor-pointer hover:bg-gray-100">
+            <div
+              className="flex justify-between items-center"
+              onClick={toggleDropdown}
+            >
               <span className="text-gray-700">Services</span>
               {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
             </div>
-            {showDropdown && (
-              <div className="mt-2 bg-gray-50 shadow-lg rounded-lg grid grid-cols-1 gap-2 p-4">
-                {services.map(({ path, label }) => (
-                  <Link
-                    key={path}
-                    to={path}
-                    className="block bg-gray-100 hover:bg-pink-100 text-gray-700 text-center py-3 px-2 rounded-md"
-                    onClick={toggleSidebar}
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            )}
+            {renderServicesDropdown()}
           </div>
           {renderLinks('py-3 px-6 border-b border-gray-200 hover:bg-gray-100')}
           <div className="flex justify-center gap-4 mt-4 px-6">
-            <img src={img1} alt="Icon 1" className="h-[50px] w-[50px] object-contain" />
-            <img src={img2} alt="Icon 2" className="h-[50px] w-[50px] object-contain" />
-            <img src={img3} alt="Icon 3" className="h-[50px] w-[50px] object-contain" />
+            <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
+            <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
+            <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
           </div>
         </div>
       )}
