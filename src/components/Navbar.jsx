@@ -47,7 +47,7 @@ const Navbar = () => {
           <Link
             key={path}
             to={path}
-            className="block bg-gray-100 hover:bg-pink-100 text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+            className="block bg-gray-100 hover:bg-[#07A2BB] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
             onClick={() => setShowDropdown(false)}
           >
             {label}
@@ -58,23 +58,23 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="w-full bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <nav className="w-full bg-white shadow-md px-6  flex justify-between items-center">
       {/* Logo */}
       <Link to="/">
         <img
           src={logo}
           alt="Shubhashree IVF Clinic"
-          className="h-[130px] object-contain transition-transform duration-300 hover:scale-110"
+          className="h-[120px] w-[180px] object-contain transition-transform duration-300 hover:scale-110"
         />
       </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-8 text-lg">
-        <Link to="/" className="text-pink-500 font-medium hover:text-pink-400">
+        <Link to="/" className="text-[#099BA4] font-medium hover:text-[#99BF1A]">
           Home
         </Link>
         <div
-          className="relative text-gray-700 cursor-pointer hover:text-pink-400"
+          className="relative text-gray-700 cursor-pointer hover:text-[#99BF1A]"
           onClick={toggleDropdown}
         >
           <div className="flex items-center gap-1">
@@ -107,7 +107,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="text-pink-500 font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100"
+            className="text-[#099BA4] font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100"
             onClick={toggleSidebar}
           >
             Home
