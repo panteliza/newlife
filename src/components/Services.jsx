@@ -75,7 +75,7 @@ const Services = () => {
   return (
     <div className="py-10 px-5 bg-gray-50">
       <h2
-        className="text-2xl font-bold text-center mb-10"
+        className="text-2xl md:text-3xl font-bold text-center text-[#019586] mb-10"
         style={{
           animation: "slideInDown 1.5s ease-out",
         }}
