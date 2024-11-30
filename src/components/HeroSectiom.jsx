@@ -4,10 +4,9 @@ import FamilyImage from "../assets/baby (2).jpg"; // Ensure the image exists in 
 const HeroSection = () => {
   return (
     <div
-      className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-8 py-4"
+      className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-8 py-4 min-h-[25vh] sm:min-h-[35vh] md:min-h-[50vh] lg:min-h-[70vh]"
       style={{
         background: "linear-gradient(to right, #029072, #18A0B0, #48B1CE,  #F47426, #F9990E, #FAED05)",
-        minHeight: "80vh", // Adjust height to minimize excessive space
       }}
     >
       {/* Text Container */}
@@ -20,7 +19,12 @@ const HeroSection = () => {
           Discover a natural approach to parenthood with compassionate and personalized IVF care.
         </p>
         <div className="mt-4 flex justify-center md:justify-start">
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-700 px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105">
+          <button
+            className="bg-yellow-400 hover:bg-yellow-500 text-gray-700 px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105"
+            style={{
+              marginBottom: 0, // Explicitly remove bottom margin
+            }}
+          >
             Read More
           </button>
         </div>
