@@ -82,7 +82,7 @@ const Services = () => {
       >
         Our Well-Equipped Services
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
         {services.map((service, index) => (
           <div
             key={index}
@@ -121,7 +121,7 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Inline CSS for Animations */}
+      {/* Inline CSS for Enhanced Animations */}
       <style>
         {`
           @keyframes fadeIn {
@@ -135,7 +135,7 @@ const Services = () => {
 
           @keyframes slideInDown {
             from {
-              transform: translateY(-50px);
+              transform: translateY(-70px);
               opacity: 0;
             }
             to {
@@ -146,17 +146,17 @@ const Services = () => {
 
           @keyframes zoomIn {
             from {
-              transform: scale(0.7);
+              transform: scale(0.5); /* Start with smaller scale */
               opacity: 0;
             }
             to {
-              transform: scale(1);
+              transform: scale(1.1); /* Slightly overshoot for impact */
               opacity: 1;
             }
           }
 
           .animate-zoomIn {
-            animation: zoomIn 1.2s ease-out forwards;
+            animation: zoomIn 1.5s ease-out forwards;
           }
         `}
       </style>
