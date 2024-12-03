@@ -5,7 +5,7 @@ const HeroPage = () => {
   return (
     <div className="relative h-screen w-full bg-gray-100">
       {/* Hero Section */}
-      <div className="relative h-full flex flex-col justify-center items-center overflow-hidden">
+      <div className="relative h-full flex flex-col justify-between overflow-hidden">
         {/* Background Image */}
         <img
           src={HeroImage}
@@ -13,19 +13,14 @@ const HeroPage = () => {
           className="absolute inset-0 w-full h-full object-contain sm:object-cover"
         />
 
-        {/* Reduced Overlay */}
-        <div className="absolute inset-0 bg-white/40 sm:bg-white/60"></div>
-
         {/* Text Content */}
-        <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-20 text-left">
-          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 md:left-16 lg:left-20">
-            <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-5xl lg:text-6xl sm:mb-4">
-              Caring. Experienced. Specialists.
-            </h1>
-            <p className="mt-4 text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl sm:mb-4">
-              Supporting families every step of the way.
-            </p>
-          </div>
+        <div className="absolute inset-0 flex flex-col justify-center items-start px-6 sm:px-10 md:px-16 lg:px-20 text-left z-10">
+          <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-5xl lg:text-6xl text-white drop-shadow-lg">
+            Caring. Experienced. Specialists.
+          </h1>
+          <p className="mt-2 text-base text-gray-300 sm:text-lg md:text-xl lg:text-2xl text-white drop-shadow-lg">
+            Supporting families every step of the way.
+          </p>
         </div>
 
         {/* Wave Design */}
@@ -33,7 +28,7 @@ const HeroPage = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
-            className="w-full h-20 md:h-40"
+            className="w-full h-16 sm:h-20 md:h-40"
           >
             <path
               fill="#ffffff"
