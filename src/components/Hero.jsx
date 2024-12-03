@@ -15,12 +15,11 @@ const HeroPage = () => {
 
         {/* Text Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-start px-6 sm:px-10 md:px-16 lg:px-20 text-left z-10">
-          <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-5xl lg:text-6xl text-white drop-shadow-lg">
-            Caring. Experienced. Specialists.
+          <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-5xl lg:text-6xl text-white drop-shadow-lg">
+          <span> Caring.</span> 
+          <span>Experienced. Specialists.</span> 
           </h1>
-          <p className="mt-2 text-base text-gray-300 sm:text-lg md:text-xl lg:text-2xl text-white drop-shadow-lg">
-            Supporting families every step of the way.
-          </p>
+          
         </div>
 
         {/* Wave Design */}
