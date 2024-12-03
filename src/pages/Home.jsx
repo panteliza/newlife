@@ -7,6 +7,7 @@ import Reviews from '../components/Reviews'
 
 import About from '../components/About'
 import Hero from '../components/Hero'
+import FertilityOptions from '../components/FertilityOptions'
 
 const Home = () => {
   return (
@@ -14,7 +15,9 @@ const Home = () => {
       <Navbar/>
      <Hero/>
      <DoctorsSlider/>
+     <FertilityOptions/>
       <HeroSection/>
+
       <Services/>
       
     
