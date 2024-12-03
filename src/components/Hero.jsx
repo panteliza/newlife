@@ -10,20 +10,22 @@ const HeroPage = () => {
         <img
           src={HeroImage}
           alt="Parent and child"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain sm:object-cover"
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-white/70"></div>
+        {/* Reduced Overlay */}
+        <div className="absolute inset-0 bg-white/40 sm:bg-white/60"></div>
 
         {/* Text Content */}
-        <div className="relative z-10 text-center px-6">
-          <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">
-            Caring. Experienced. Specialists.
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 md:text-xl">
-            Supporting families every step of the way.
-          </p>
+        <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-20 text-left">
+          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 md:left-16 lg:left-20">
+            <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-5xl lg:text-6xl sm:mb-4">
+              Caring. Experienced. Specialists.
+            </h1>
+            <p className="mt-4 text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl sm:mb-4">
+              Supporting families every step of the way.
+            </p>
+          </div>
         </div>
 
         {/* Wave Design */}
@@ -31,7 +33,7 @@ const HeroPage = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
-            className="w-full h-40"
+            className="w-full h-20 md:h-40"
           >
             <path
               fill="#ffffff"
