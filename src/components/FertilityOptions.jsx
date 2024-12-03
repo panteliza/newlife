@@ -1,5 +1,6 @@
 import React from "react";
-import bgImage from "../assets/bg1.jpg"; // Replace with your actual background image
+import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
+import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
 import fertilityImg1 from "../assets/mother1.jpg";
 import fertilityImg2 from "../assets/mother2.jpg";
 import fertilityImg3 from "../assets/mother3.jpg";
@@ -46,38 +47,55 @@ const FertilityOptions = () => {
   ];
 
   return (
-    <div
-      className="relative bg-cover bg-center py-16"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
-      <div className="p-8 mx-4">
-        <h1 className="text-center text-3xl font-bold text-white mb-6">
-          Start your journey with Newlife IVF
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {options.map((option, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
-            >
-              <img
-                src={option.image}
-                alt={option.title}
-                className="h-32 w-32 object-cover mb-4 rounded-full"
-              />
-              <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
-              <p className="text-sm text-gray-600 mb-4">{option.description}</p>
-              <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
-                {option.button}
-              </button>
-            </div>
-          ))}
-        </div>
+    <div>
+      {/* Large screen background */}
+      <div
+        className="hidden sm:block relative bg-cover bg-center py-16"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+        }}
+      >
+        <Content options={options} />
+      </div>
+
+      {/* Small screen background */}
+      <div
+        className="block sm:hidden relative bg-cover bg-center py-16"
+        style={{
+          backgroundImage: `url(${bgImageSmall})`,
+        }}
+      >
+        <Content options={options} />
       </div>
     </div>
   );
 };
+
+const Content = ({ options }) => (
+  <div className="p-8 mx-4">
+    <h1 className="text-center text-3xl font-bold text-white mb-6">
+      Start your journey with Newlife IVF
+    </h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      {options.map((option, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
+        >
+          <img
+            src={option.image}
+            alt={option.title}
+            className="h-32 w-32 sm:object-cover object-contain mb-4 rounded-full"
+          />
+          <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
+          <p className="text-sm text-gray-600 mb-4">{option.description}</p>
+          <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
+            {option.button}
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default FertilityOptions;
