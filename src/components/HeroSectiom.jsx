@@ -22,7 +22,7 @@ const HeroSection = () => {
           <button
             className="bg-yellow-400 hover:bg-yellow-500 text-gray-700 px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105"
           >
-            Read More
+          About Us
           </button>
         </div>
       </div>

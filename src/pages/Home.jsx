@@ -8,6 +8,7 @@ import Reviews from '../components/Reviews'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import FertilityOptions from '../components/FertilityOptions'
+import OptionalExtras from '../components/OptionalExtras'
 
 const Home = () => {
   return (
@@ -16,9 +17,10 @@ const Home = () => {
      <Hero/>
      <DoctorsSlider/>
      <FertilityOptions/>
+     <Services/>
       <HeroSection/>
-
-      <Services/>
+<OptionalExtras/>
+     
       
     
     <Reviews/>
