@@ -34,7 +34,7 @@ const OptionalExtras = () => {
           <img
             src={embryoScopeImage}
             alt="EmbryoScope"
-            className="w-20 h-20 mb-4 rounded-full border border-gray-300 object-cover"
+            className="w-24 h-24 mb-4 rounded-full border border-gray-300 object-cover"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             EmbryoScope
@@ -43,7 +43,7 @@ const OptionalExtras = () => {
             An incubator that facilitates undisturbed embryo growth and
             continual embryo assessment.
           </p>
-          <button className="mt-4 bg-yellow-500 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-yellow-600">
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
           </button>
         </div>
@@ -53,7 +53,7 @@ const OptionalExtras = () => {
           <img
             src={eggSpindleImage}
             alt="Egg Spindle Visualisation"
-            className="w-20 h-20 mb-4 rounded-full border border-gray-300 object-cover"
+            className="w-24 h-24 mb-4 rounded-full border border-gray-300 object-cover"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Egg Spindle Visualisation
@@ -62,7 +62,7 @@ const OptionalExtras = () => {
             A microscopic imaging system for assessing if an egg is in optimal
             condition for fertilisation via ICSI.
           </p>
-          <button className="mt-4 bg-yellow-500 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-yellow-600">
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
           </button>
         </div>
@@ -72,7 +72,7 @@ const OptionalExtras = () => {
           <img
             src={embryoGlueImage}
             alt="EmbryoGlue"
-            className="w-20 h-20 mb-4 rounded-full border border-gray-300 object-cover"
+            className="w-24 h-24 mb-4 rounded-full border border-gray-300 object-cover"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             EmbryoGlue
@@ -81,7 +81,7 @@ const OptionalExtras = () => {
             A nutrient-rich substance designed to promote successful embryo
             transfer into the womb.
           </p>
-          <button className="mt-4 bg-yellow-500 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-yellow-600">
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
           </button>
         </div>
