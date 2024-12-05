@@ -9,6 +9,7 @@ import About from '../components/About'
 import Hero from '../components/Hero'
 import FertilityOptions from '../components/FertilityOptions'
 import OptionalExtras from '../components/OptionalExtras'
+import GivingYouNewLife from '../components/GivingYouNewLife'
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
      <Services/>
       <HeroSection/>
 <OptionalExtras/>
+<GivingYouNewLife/>
      
       
     
