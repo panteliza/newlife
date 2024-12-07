@@ -17,14 +17,15 @@ const OptionalExtras = () => {
     >
       {/* Title and Description */}
       <div className="text-center max-w-4xl mx-auto mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl font-bold text-[#019586] mb-4">
           What others call ‘optional extras’, we call our standard of care
         </h2>
-        <p className="text-gray-600 text-sm md:text-base">
-          Our standard IVF treatment process incorporates advanced scientific
-          tools and techniques that other IVF providers do not offer or only
-          offer for an additional cost.
-        </p>
+        <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 via-orange-500 via-green-500 to-red-500 text-sm md:text-base">
+  Our standard IVF treatment process incorporates advanced scientific tools
+  and techniques that other IVF providers do not offer or only offer for an
+  additional cost.
+</p>
+
       </div>
 
       {/* Feature Cards */}

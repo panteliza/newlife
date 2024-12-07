@@ -73,7 +73,7 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
-    <h1 className="text-center text-3xl font-bold text-white mb-6">
+    <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6">
       Start your journey with Newlife IVF
     </h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">

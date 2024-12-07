@@ -8,7 +8,7 @@ const GivingYouNewLife = () => {
     <section className="bg-gray-100 py-12 px-4 md:px-16">
       {/* Title */}
       <div className="text-center max-w-4xl mx-auto mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl font-bold text-[#019586] mb-4">
           Giving you Newlife in a different way
         </h2>
       </div>
