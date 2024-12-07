@@ -1,33 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
 import embryoScopeImage from "../assets/embryoscope.png";
 import eggSpindleImage from "../assets/eggspindle.png";
 import embryoGlueImage from "../assets/embryoglue.jpeg";
 import bgImage from "../assets/bg3.jpg"; // Background image on the left
 
 const OptionalExtras = () => {
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 50 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
   return (
-    <motion.section
+    <section
       className="relative bg-gradient-to-r from-green-300 via-yellow-100 to-white py-12 px-4 md:px-16"
       style={{
         backgroundImage: `url(${bgImage})`,
@@ -35,17 +14,70 @@ const OptionalExtras = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
       }}
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
     >
+      <style>
+        {`
+          @keyframes fadeIn {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideUp {
+            0% {
+              opacity: 0;
+              transform: translateY(50px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes scaleIn {
+            0% {
+              opacity: 0;
+              transform: scale(0.8);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          .animate-fade {
+            animation: fadeIn 1s ease-out forwards;
+          }
+
+          .animate-slide-up {
+            animation: slideUp 1s ease-out forwards;
+          }
+
+          .animate-scale {
+            animation: scaleIn 1s ease-out forwards;
+          }
+
+          .delay-1 {
+            animation-delay: 0.2s;
+          }
+
+          .delay-2 {
+            animation-delay: 0.4s;
+          }
+
+          .delay-3 {
+            animation-delay: 0.6s;
+          }
+        `}
+      </style>
+
       {/* Title and Description */}
-      <motion.div
-        className="text-center max-w-4xl mx-auto mb-12"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
+      <div className="text-center max-w-4xl mx-auto mb-12 animate-fade">
         <h2 className="text-3xl font-bold text-[#019586] mb-4">
           What others call ‘optional extras’, we call our standard of care
         </h2>
@@ -54,17 +86,13 @@ const OptionalExtras = () => {
           tools and techniques that other IVF providers do not offer or only
           offer for an additional cost.
         </p>
-      </motion.div>
+      </div>
 
       {/* Feature Cards */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-        variants={containerVariants}
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* Card 1 */}
-        <motion.div
-          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300"
-          variants={cardVariants}
+        <div
+          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 animate-scale delay-1"
         >
           <img
             src={embryoScopeImage}
@@ -78,19 +106,14 @@ const OptionalExtras = () => {
             An incubator that facilitates undisturbed embryo growth and
             continual embryo assessment.
           </p>
-          <motion.button
-            className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Card 2 */}
-        <motion.div
-          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300"
-          variants={cardVariants}
+        <div
+          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 animate-scale delay-2"
         >
           <img
             src={eggSpindleImage}
@@ -104,19 +127,14 @@ const OptionalExtras = () => {
             A microscopic imaging system for assessing if an egg is in optimal
             condition for fertilisation via ICSI.
           </p>
-          <motion.button
-            className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Card 3 */}
-        <motion.div
-          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300"
-          variants={cardVariants}
+        <div
+          className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 animate-scale delay-3"
         >
           <img
             src={embryoGlueImage}
@@ -130,16 +148,12 @@ const OptionalExtras = () => {
             A nutrient-rich substance designed to promote successful embryo
             transfer into the womb.
           </p>
-          <motion.button
-            className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
             Learn more
-          </motion.button>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 
