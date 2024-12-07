@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
 import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
 import fertilityImg1 from "../assets/mother1.jpg";
@@ -49,6 +48,71 @@ const FertilityOptions = () => {
 
   return (
     <div>
+      <style>
+        {`
+          @keyframes fadeInZoom {
+            0% {
+              opacity: 0;
+              transform: translateY(-20px) scale(0.9);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+
+          @keyframes slideFromLeft {
+            0% {
+              opacity: 0;
+              transform: translateX(-100px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes slideFromRight {
+            0% {
+              opacity: 0;
+              transform: translateX(100px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          .animate-heading {
+            animation: fadeInZoom 1s ease-out forwards;
+          }
+
+          .animate-left {
+            animation: slideFromLeft 1s ease-out forwards;
+          }
+
+          .animate-right {
+            animation: slideFromRight 1s ease-out forwards;
+          }
+
+          .animation-delay-1 {
+            animation-delay: 0.2s;
+          }
+
+          .animation-delay-2 {
+            animation-delay: 0.4s;
+          }
+
+          .animation-delay-3 {
+            animation-delay: 0.6s;
+          }
+
+          .animation-delay-4 {
+            animation-delay: 0.8s;
+          }
+        `}
+      </style>
+
       {/* Large screen background */}
       <div
         className="hidden sm:block relative bg-cover bg-center py-16"
@@ -74,47 +138,16 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
-    {/* Enhanced Animated Heading */}
-    <motion.h1
-      className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 1.2,
-        ease: "easeOut",
-      }}
-    >
+    <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6 animate-heading">
       Start your journey with Newlife IVF
-    </motion.h1>
-
-    {/* Enhanced Animated Grid */}
-    <motion.div
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.4,
-          },
-        },
-      }}
-    >
+    </h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
       {options.map((option, index) => (
-        <motion.div
+        <div
           key={index}
-          className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
-          initial={{
-            x: index % 2 === 0 ? -150 : 150, // More pronounced left/right animation
-            opacity: 0,
-          }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 1.2, // Slower duration for better visibility
-            ease: "easeOut",
-          }}
+          className={`bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center ${
+            index % 2 === 0 ? "animate-left" : "animate-right"
+          } animation-delay-${index}`}
         >
           <img
             src={option.image}
@@ -123,16 +156,12 @@ const Content = ({ options }) => (
           />
           <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
-          <motion.button
-            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300">
             {option.button}
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       ))}
-    </motion.div>
+    </div>
   </div>
 );
 
