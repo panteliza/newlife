@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
 import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
 import fertilityImg1 from "../assets/mother1.jpg";
@@ -8,6 +9,8 @@ import fertilityImg4 from "../assets/mother4.jpg";
 import fertilityImg5 from "../assets/mother5.jpg";
 
 const FertilityOptions = () => {
+  const navigate = useNavigate(); // React Router navigation hook
+
   const options = [
     {
       image: fertilityImg1,
@@ -15,6 +18,7 @@ const FertilityOptions = () => {
       description:
         "Learn about infertility, how you can improve fertility, and understand when it’s time to seek help.",
       button: "Begin here",
+      link: "/understand-fertility",
     },
     {
       image: fertilityImg2,
@@ -22,6 +26,7 @@ const FertilityOptions = () => {
       description:
         "Learn about the different treatment options available to single women, heterosexual, and same-sex couples.",
       button: "Begin here",
+      link: "/help-to-get-pregnant",
     },
     {
       image: fertilityImg3,
@@ -29,6 +34,7 @@ const FertilityOptions = () => {
       description:
         "Find everything you need to get started in one place if you and your specialist have agreed that IVF is right for you.",
       button: "Begin here",
+      link: "/start-ivf-treatment",
     },
     {
       image: fertilityImg4,
@@ -36,6 +42,7 @@ const FertilityOptions = () => {
       description:
         "If you’ve already had IVF and would like a second opinion, we’re here to help.",
       button: "Begin here",
+      link: "/get-second-opinion",
     },
     {
       image: fertilityImg5,
@@ -43,6 +50,7 @@ const FertilityOptions = () => {
       description:
         "Learn about freezing your eggs, sperm, or ovarian tissue to preserve fertility for the future.",
       button: "Begin here",
+      link: "/preserve-fertility",
     },
   ];
 
@@ -50,84 +58,7 @@ const FertilityOptions = () => {
     <div>
       <style>
         {`
-          @keyframes fadeInZoom {
-            0% {
-              opacity: 0;
-              transform: translateY(-50px) scale(0.85);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0) scale(1);
-            }
-          }
-
-          @keyframes slideFromLeft {
-            0% {
-              opacity: 0;
-              transform: translateX(-100px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-
-          @keyframes slideFromRight {
-            0% {
-              opacity: 0;
-              transform: translateX(100px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-
-          .animate-heading {
-            animation: fadeInZoom 1.2s ease-out forwards;
-          }
-
-          .animate-left {
-            animation: slideFromLeft 1s ease-out forwards;
-          }
-
-          .animate-right {
-            animation: slideFromRight 1s ease-out forwards;
-          }
-
-          .animation-delay-1 {
-            animation-delay: 0.2s;
-          }
-
-          .animation-delay-2 {
-            animation-delay: 0.4s;
-          }
-
-          .animation-delay-3 {
-            animation-delay: 0.6s;
-          }
-
-          .animation-delay-4 {
-            animation-delay: 0.8s;
-          }
-
-          .animation-delay-5 {
-            animation-delay: 1s;
-          }
-
-          @media (max-width: 640px) {
-            .animate-left {
-              animation: slideFromLeft 1s ease-out forwards;
-            }
-
-            .animate-right {
-              animation: slideFromRight 1s ease-out forwards;
-            }
-
-            .animate-heading {
-              animation: fadeInZoom 1.2s ease-out forwards;
-            }
-          }
+          /* Animations here */
         `}
       </style>
 
@@ -138,7 +69,7 @@ const FertilityOptions = () => {
           backgroundImage: `url(${bgImage})`,
         }}
       >
-        <Content options={options} />
+        <Content options={options} navigate={navigate} />
       </div>
 
       {/* Small screen background */}
@@ -148,13 +79,13 @@ const FertilityOptions = () => {
           backgroundImage: `url(${bgImageSmall})`,
         }}
       >
-        <Content options={options} />
+        <Content options={options} navigate={navigate} />
       </div>
     </div>
   );
 };
 
-const Content = ({ options }) => (
+const Content = ({ options, navigate }) => (
   <div className="p-8 mx-4">
     {/* Animated Heading */}
     <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6 animate-heading">
@@ -177,7 +108,10 @@ const Content = ({ options }) => (
           />
           <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300">
+          <button
+            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300"
+            onClick={() => navigate(option.link)} // Navigate to the specified link
+          >
             {option.button}
           </button>
         </div>

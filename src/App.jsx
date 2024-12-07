@@ -5,6 +5,10 @@ import './App.css'; // Add this for styling
 import Home from './pages/Home';
 
 import whatsappImage from './assets/whatsapp_733585.png'; // Import WhatsApp image
+import EmbryoScopeDetails from './pages/EmbryoScopeDetails';
+import EmbryoGlueDetails from './pages/EmbryoGlueDetails';
+import EggSpindleDetails from './pages/EggSpindleDetails';
+import LearnAboutFertility from './pages/LearnAboutFertility';
 
 
 const App = () => {
@@ -17,6 +21,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/newlife" element={<Home />} />
           <Route path="/newlifeivf" element={<Home />} />
+          <Route path="/embryoscope" element={<EmbryoScopeDetails />} />
+          <Route path="/embryoglue" element={<EmbryoGlueDetails />} />
+          <Route path="/eggspindle" element={<EggSpindleDetails />} />
+          <Route path="/understand-fertility" element={<LearnAboutFertility />} />
         </Routes>
 
         {/* WhatsApp button as an image */}
