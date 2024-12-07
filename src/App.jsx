@@ -9,6 +9,7 @@ import EmbryoScopeDetails from './pages/EmbryoScopeDetails';
 import EmbryoGlueDetails from './pages/EmbryoGlueDetails';
 import EggSpindleDetails from './pages/EggSpindleDetails';
 import LearnAboutFertility from './pages/LearnAboutFertility';
+import HelpToGetPregnant from './pages/HelpToGetPregnant';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/embryoglue" element={<EmbryoGlueDetails />} />
           <Route path="/eggspindle" element={<EggSpindleDetails />} />
           <Route path="/understand-fertility" element={<LearnAboutFertility />} />
+          <Route path="/help-to-get-pregnant" element={<HelpToGetPregnant />} />
         </Routes>
 
         {/* WhatsApp button as an image */}
