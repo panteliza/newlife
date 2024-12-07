@@ -114,6 +114,20 @@ const FertilityOptions = () => {
           .animation-delay-5 {
             animation-delay: 1s;
           }
+
+          @media (max-width: 640px) {
+            .animate-left {
+              animation: slideFromLeft 1s ease-out forwards;
+            }
+
+            .animate-right {
+              animation: slideFromRight 1s ease-out forwards;
+            }
+
+            .animate-heading {
+              animation: fadeInZoom 1.2s ease-out forwards;
+            }
+          }
         `}
       </style>
 
@@ -142,7 +156,7 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
-    {/* Enhanced Animated Heading */}
+    {/* Animated Heading */}
     <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6 animate-heading">
       Start your journey with Newlife IVF
     </h1>
