@@ -139,15 +139,18 @@ const Navbar = () => {
         {/* Mobile Sidebar */}
         {showSidebar && (
           <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-[2] flex flex-col">
-            <div className="flex justify-between items-center px-6 py-4">
+            {/* Close Button at Top-Right */}
+            <MdOutlineClose
+              className="absolute top-4 right-4 text-3xl text-gray-700 cursor-pointer hover:text-gray-900"
+              onClick={toggleSidebar}
+            />
+            <div className="flex justify-center items-center py-6">
               {/* Different logo for the sidebar */}
               <img
                 src={logo2}
                 alt="Shubhashree IVF Clinic Sidebar Logo"
                 className="h-[100px] object-contain transition-transform duration-300 hover:scale-110"
               />
-              {/* Close button */}
-              <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
             </div>
             <Link
               to="/"
