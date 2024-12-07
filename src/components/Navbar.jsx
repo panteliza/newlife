@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
-import logo from '../assets/logo.png'; // Replace with your actual logo path
-import logo2 from '../assets/logo2.png'; // Replace with the logo for mobile sidebar
-import img1 from '../assets/communication_15047435.png'; // Replace with your actual path
-import img2 from '../assets/google-maps_355980.png'; // Replace with your actual path
-import img3 from '../assets/whatsapp_733585.png'; // Replace with your actual path
+import logo from '../assets/logo.png'; // Main logo
+import logo2 from '../assets/logo2.png'; // Sidebar logo
+import img1 from '../assets/communication_15047435.png'; // Replace with actual path
+import img2 from '../assets/google-maps_355980.png'; // Replace with actual path
+import img3 from '../assets/whatsapp_733585.png'; // Replace with actual path
 
 const services = [
   { path: '/ivf-treatment', label: 'IVF (In-Vitro Fertilization) Treatment' },
@@ -146,6 +146,7 @@ const Navbar = () => {
                 alt="Shubhashree IVF Clinic Sidebar Logo"
                 className="h-[100px] object-contain transition-transform duration-300 hover:scale-110"
               />
+              {/* Close button */}
               <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
             </div>
             <Link
