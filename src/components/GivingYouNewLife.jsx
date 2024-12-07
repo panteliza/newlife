@@ -1,9 +1,16 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import clinicianIcon from "../assets/bc (1).jpg"; // Replace with the correct path to your icons
 import microscopeIcon from "../assets/bc (2).jpg";
 import supportIcon from "../assets/bc (3).jpg";
 
 const GivingYouNewLife = () => {
+  // Intersection Observer hooks for title and cards
+  const [titleRef, titleInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [card1Ref, card1InView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [card2Ref, card2InView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [card3Ref, card3InView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
     <section className="bg-gray-100 py-12 px-4 md:px-16">
       <style>
@@ -37,19 +44,16 @@ const GivingYouNewLife = () => {
           .animate-scaleUp {
             animation: scaleUp 1s ease-out both;
           }
-
-          .delay-200 {
-            animation-delay: 0.2s;
-          }
-
-          .delay-400 {
-            animation-delay: 0.4s;
-          }
         `}
       </style>
 
       {/* Title */}
-      <div className="text-center max-w-4xl mx-auto mb-12 animate-fadeInUp">
+      <div
+        ref={titleRef}
+        className={`text-center max-w-4xl mx-auto mb-12 ${
+          titleInView ? "animate-fadeInUp" : "opacity-0"
+        }`}
+      >
         <h2 className="text-3xl font-bold text-[#019586] mb-4">
           Giving you Newlife in a different way
         </h2>
@@ -58,7 +62,12 @@ const GivingYouNewLife = () => {
       {/* Features */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* Card 1 */}
-        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp">
+        <div
+          ref={card1Ref}
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+            card1InView ? "animate-scaleUp" : "opacity-0"
+          }`}
+        >
           <img
             src={clinicianIcon}
             alt="Clinician-Owned and Led"
@@ -74,7 +83,12 @@ const GivingYouNewLife = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp delay-200">
+        <div
+          ref={card2Ref}
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+            card2InView ? "animate-scaleUp" : "opacity-0"
+          }`}
+        >
           <img
             src={microscopeIcon}
             alt="Best Scientific Practice for All"
@@ -93,7 +107,12 @@ const GivingYouNewLife = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp delay-400">
+        <div
+          ref={card3Ref}
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+            card3InView ? "animate-scaleUp" : "opacity-0"
+          }`}
+        >
           <img
             src={supportIcon}
             alt="Genuine Care and Support"
