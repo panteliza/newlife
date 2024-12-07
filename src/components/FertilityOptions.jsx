@@ -74,14 +74,20 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
+    {/* Enhanced Animated Heading */}
     <motion.h1
       className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1.2,
+        ease: "easeOut",
+      }}
     >
       Start your journey with Newlife IVF
     </motion.h1>
+
+    {/* Enhanced Animated Grid */}
     <motion.div
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
       initial="hidden"
@@ -91,7 +97,7 @@ const Content = ({ options }) => (
         visible: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.2,
+            staggerChildren: 0.4,
           },
         },
       }}
@@ -100,9 +106,15 @@ const Content = ({ options }) => (
         <motion.div
           key={index}
           className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          initial={{
+            x: index % 2 === 0 ? -150 : 150, // More pronounced left/right animation
+            opacity: 0,
+          }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            duration: 1.2, // Slower duration for better visibility
+            ease: "easeOut",
+          }}
         >
           <img
             src={option.image}
@@ -113,7 +125,8 @@ const Content = ({ options }) => (
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
           <motion.button
             className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
           >
             {option.button}
           </motion.button>
