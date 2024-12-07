@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
 import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
 import fertilityImg1 from "../assets/mother1.jpg";
@@ -73,14 +74,35 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
-    <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6">
+    <motion.h1
+      className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       Start your journey with Newlife IVF
-    </h1>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+    </motion.h1>
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+    >
       {options.map((option, index) => (
-        <div
+        <motion.div
           key={index}
           className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
           <img
             src={option.image}
@@ -89,12 +111,15 @@ const Content = ({ options }) => (
           />
           <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
+          <motion.button
+            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+            whileHover={{ scale: 1.1 }}
+          >
             {option.button}
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   </div>
 );
 
