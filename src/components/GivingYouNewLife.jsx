@@ -1,83 +1,68 @@
 import React from "react";
-import { motion } from "framer-motion";
 import clinicianIcon from "../assets/bc (1).jpg"; // Replace with the correct path to your icons
 import microscopeIcon from "../assets/bc (2).jpg";
 import supportIcon from "../assets/bc (3).jpg";
 
 const GivingYouNewLife = () => {
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.85, y: 50 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        type: "spring",
-        stiffness: 120,
-        damping: 14,
-      },
-    },
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-        delayChildren: 0.2, // Small delay for staggered animations on mobile
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.15,
-      backgroundColor: ["#fca311", "#d97706", "#dc2626", "#fca311"],
-      transition: { duration: 0.6, repeat: Infinity, repeatType: "reverse" },
-    },
-    tap: { scale: 0.95 },
-  };
-
   return (
-    <motion.section
-      className="bg-gray-100 py-12 px-4 md:px-16"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
+    <section className="bg-gray-100 py-12 px-4 md:px-16">
+      <style>
+        {`
+          @keyframes fadeInUp {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes scaleUp {
+            0% {
+              opacity: 0;
+              transform: scale(0.9);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out both;
+          }
+
+          .animate-scaleUp {
+            animation: scaleUp 1s ease-out both;
+          }
+
+          .delay-200 {
+            animation-delay: 0.2s;
+          }
+
+          .delay-400 {
+            animation-delay: 0.4s;
+          }
+        `}
+      </style>
+
       {/* Title */}
-      <motion.div
-        className="text-center max-w-4xl mx-auto mb-12"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-          ease: "easeOut",
-          type: "spring",
-          stiffness: 120,
-        }}
-      >
+      <div className="text-center max-w-4xl mx-auto mb-12 animate-fadeInUp">
         <h2 className="text-3xl font-bold text-[#019586] mb-4">
           Giving you Newlife in a different way
         </h2>
-      </motion.div>
+      </div>
 
       {/* Features */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-        variants={containerVariants}
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* Card 1 */}
-        <motion.div
-          className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-          variants={cardVariants}
-        >
+        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp">
           <img
             src={clinicianIcon}
             alt="Clinician-Owned and Led"
-            className="w-24 h-24 mb-4"
+            className="w-24 h-24 mb-4 rounded-full"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Clinician-Owned and Led
@@ -86,17 +71,14 @@ const GivingYouNewLife = () => {
             Our clinics are fully owned and operated by fertility specialists –
             so we can put patients first.
           </p>
-        </motion.div>
+        </div>
 
         {/* Card 2 */}
-        <motion.div
-          className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-          variants={cardVariants}
-        >
+        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp delay-200">
           <img
             src={microscopeIcon}
             alt="Best Scientific Practice for All"
-            className="w-24 h-24 mb-4"
+            className="w-24 h-24 mb-4 rounded-full"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Best Scientific Practice for All
@@ -105,25 +87,17 @@ const GivingYouNewLife = () => {
             Access to the latest, evidence-based tools and techniques – as our
             standard of care.
           </p>
-          <motion.button
-            className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300"
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-          >
+          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300 hover:scale-105">
             About us
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Card 3 */}
-        <motion.div
-          className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-          variants={cardVariants}
-        >
+        <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 animate-scaleUp delay-400">
           <img
             src={supportIcon}
             alt="Genuine Care and Support"
-            className="w-24 h-24 mb-4"
+            className="w-24 h-24 mb-4 rounded-full"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Genuine Care and Support
@@ -132,9 +106,9 @@ const GivingYouNewLife = () => {
             A team committed to supporting you throughout your entire fertility
             journey – from our family to yours.
           </p>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+        </div>
+      </div>
+    </section>
   );
 };
 
