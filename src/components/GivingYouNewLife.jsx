@@ -6,7 +6,7 @@ import supportIcon from "../assets/bc (3).jpg";
 
 const GivingYouNewLife = () => {
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 50 },
+    hidden: { opacity: 0, scale: 0.85, y: 50 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -14,8 +14,8 @@ const GivingYouNewLife = () => {
       transition: {
         duration: 0.8,
         type: "spring",
-        stiffness: 100,
-        damping: 10,
+        stiffness: 120,
+        damping: 14,
       },
     },
   };
@@ -25,14 +25,15 @@ const GivingYouNewLife = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.25,
+        delayChildren: 0.2, // Small delay for staggered animations on mobile
       },
     },
   };
 
   const buttonVariants = {
     hover: {
-      scale: 1.1,
+      scale: 1.15,
       backgroundColor: ["#fca311", "#d97706", "#dc2626", "#fca311"],
       transition: { duration: 0.6, repeat: Infinity, repeatType: "reverse" },
     },
@@ -55,7 +56,7 @@ const GivingYouNewLife = () => {
           duration: 1,
           ease: "easeOut",
           type: "spring",
-          stiffness: 100,
+          stiffness: 120,
         }}
       >
         <h2 className="text-3xl font-bold text-[#019586] mb-4">
