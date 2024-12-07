@@ -53,7 +53,7 @@ const FertilityOptions = () => {
           @keyframes fadeInZoom {
             0% {
               opacity: 0;
-              transform: translateY(-20px) scale(0.9);
+              transform: translateY(-50px) scale(0.85);
             }
             100% {
               opacity: 1;
@@ -84,7 +84,7 @@ const FertilityOptions = () => {
           }
 
           .animate-heading {
-            animation: fadeInZoom 1s ease-out forwards;
+            animation: fadeInZoom 1.2s ease-out forwards;
           }
 
           .animate-left {
@@ -109,6 +109,10 @@ const FertilityOptions = () => {
 
           .animation-delay-4 {
             animation-delay: 0.8s;
+          }
+
+          .animation-delay-5 {
+            animation-delay: 1s;
           }
         `}
       </style>
@@ -138,16 +142,19 @@ const FertilityOptions = () => {
 
 const Content = ({ options }) => (
   <div className="p-8 mx-4">
+    {/* Enhanced Animated Heading */}
     <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6 animate-heading">
       Start your journey with Newlife IVF
     </h1>
+
+    {/* Animated Cards */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
       {options.map((option, index) => (
         <div
           key={index}
           className={`bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center ${
             index % 2 === 0 ? "animate-left" : "animate-right"
-          } animation-delay-${index}`}
+          } animation-delay-${index + 1}`}
         >
           <img
             src={option.image}
