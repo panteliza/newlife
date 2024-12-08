@@ -22,7 +22,7 @@ const services = [
 
 const navLinks = [
   { path: '/about', label: 'About' },
-  { path: '/blog', label: 'Blog' },
+  
   { path: '/gallery', label: 'Gallery' },
   { path: '/contact', label: 'Contact us' },
 ];
