@@ -13,7 +13,7 @@ import HelpToGetPregnant from './pages/HelpToGetPregnant';
 import StartIVFTreatment from './pages/StartIVFTreatment';
 import SecondOpinion from './pages/SecondOpinion';
 import PreserveMyFertility from './pages/PreserveMyFertility';
-import About from './components/About';
+import About from './pages/About';
 import Contact from './pages/Contact';
 
 
