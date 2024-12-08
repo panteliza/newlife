@@ -104,7 +104,7 @@ const Content = ({ options, navigate }) => (
           <img
             src={option.image}
             alt={option.title}
-            className="h-32 w-32 sm:object-cover object-contain mb-4 rounded-full"
+            className="h-32 w-32 object-cover  mb-4 rounded-full"
           />
           <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
