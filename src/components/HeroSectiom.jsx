@@ -1,12 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import FamilyImage from "../assets/baby (2).jpg"; // Ensure the image exists in the assets folder
 
 const HeroSection = () => {
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleNavigation = () => {
+    navigate("/about"); // Replace with your desired route
+  };
+
   return (
     <div
       className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-8 py-4 min-h-[25vh] sm:min-h-[35vh] md:min-h-[50vh] lg:min-h-[70vh]"
       style={{
-        background: "linear-gradient(to right, #029072, #18A0B0, #48B1CE,  #F47426, #F9990E, #FAED05)",
+        background:
+          "linear-gradient(to right, #029072, #18A0B0, #48B1CE,  #F47426, #F9990E, #FAED05)",
       }}
     >
       {/* Text Container */}
@@ -16,13 +24,15 @@ const HeroSection = () => {
           <span className="text-yellow-300">the Natural Way</span>
         </h1>
         <p className="mt-3 text-gray-200 text-sm md:text-lg drop-shadow-lg leading-relaxed animate-paragraphFadeIn">
-          Discover a natural approach to parenthood with compassionate and personalized IVF care.
+          Discover a natural approach to parenthood with compassionate and
+          personalized IVF care.
         </p>
         <div className="mt-4 flex justify-center md:justify-start animate-buttonFadeIn">
           <button
             className="bg-yellow-400 hover:bg-yellow-500 text-gray-700 px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105"
+            onClick={handleNavigation} // Handle navigation
           >
-          About Us
+            About Us
           </button>
         </div>
       </div>

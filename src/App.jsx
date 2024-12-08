@@ -13,6 +13,8 @@ import HelpToGetPregnant from './pages/HelpToGetPregnant';
 import StartIVFTreatment from './pages/StartIVFTreatment';
 import SecondOpinion from './pages/SecondOpinion';
 import PreserveMyFertility from './pages/PreserveMyFertility';
+import About from './components/About';
+import Contact from './pages/Contact';
 
 
 const App = () => {
@@ -33,6 +35,8 @@ const App = () => {
           <Route path="/start-ivf-treatment" element={<StartIVFTreatment />} />
           <Route path="/get-second-opinion" element={<SecondOpinion />} />
           <Route path="/preserve-fertility" element={<PreserveMyFertility />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
 
         {/* WhatsApp button as an image */}
