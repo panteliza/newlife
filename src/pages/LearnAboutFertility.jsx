@@ -4,10 +4,10 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 // Import images
-import fertilityImage1 from "../assets/ab1.jpg";
-import fertilityImage2 from "../assets/ab2.jpg";
-import fertilityImage3 from "../assets/ab3.jpg";
-import fertilityImage4 from "../assets/ab4.jpg";
+import fertilityImage1 from "../assets/ab1.png";
+import fertilityImage2 from "../assets/ab2.png";
+import fertilityImage3 from "../assets/ab3.png";
+import fertilityImage4 from "../assets/ab4.png";
 
 const LearnAboutFertility = () => {
   const location = useLocation();

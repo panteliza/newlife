@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import eggSpindleImage from "../assets/eggspindle.png"; // Replace with the correct image path
+import eggSpindleImage from "../assets/eggspindle (2).png"; // Replace with the correct image path
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 

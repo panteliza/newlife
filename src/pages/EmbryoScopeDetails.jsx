@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import embryoImage from "../assets/ep1.jpg"; // Replace with the correct image path
+import embryoImage from "../assets/ep1.png"; // Replace with the correct image path
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 

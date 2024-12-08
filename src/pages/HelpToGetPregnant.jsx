@@ -5,9 +5,9 @@ import Navbar from "../components/Navbar";
 
 // Import images
 import pregnantWomanImage from "../assets/abcd.jpg"; // Replace with correct image paths
-import heterosexualCouplesImage from "../assets/cd1.jpg";
-import sameSexCouplesImage from "../assets/cd2.jpg";
-import singleParentImage from "../assets/cd3.jpg";
+import heterosexualCouplesImage from "../assets/cd1.png";
+import sameSexCouplesImage from "../assets/cd2.png";
+import singleParentImage from "../assets/cd3.png";
 
 
 const HelpToGetPregnant = () => {
