@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+
+import { useLocation } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
@@ -8,6 +10,12 @@ const mapImageUrl =
   'https://www.google.com/maps/dir/27.705344,84.410368/newlife+ivf+kathmandu/@27.6376209,84.5416232,10z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x39eb190008124681:0x1dd4ad79158758e3!2m2!1d85.3324163!2d27.689199?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D'; // Replace with the New Life IVF location link
 
 const Contact = () => {
+  const location = useLocation();
+
+  // Scroll to top on location change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   const headingRef = useRef(null);
   const textRef = useRef(null);
   const mapRef = useRef(null);

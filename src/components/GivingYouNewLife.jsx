@@ -1,15 +1,23 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import clinicianIcon from "../assets/bc (1).jpg"; // Replace with the correct path to your icons
 import microscopeIcon from "../assets/bc (2).jpg";
 import supportIcon from "../assets/bc (3).jpg";
 
 const GivingYouNewLife = () => {
+  const navigate = useNavigate(); // Initialize navigation
+
   // Intersection Observer hooks for title and cards
   const [titleRef, titleInView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [card1Ref, card1InView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [card2Ref, card2InView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [card3Ref, card3InView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // Navigation function
+  const handleNavigate = () => {
+    navigate("/about"); // Replace with your "About" page route
+  };
 
   return (
     <section className="bg-gray-100 py-12 px-4 md:px-16">
@@ -101,7 +109,10 @@ const GivingYouNewLife = () => {
             Access to the latest, evidence-based tools and techniques – as our
             standard of care.
           </p>
-          <button className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300 hover:scale-105">
+          <button
+            className="mt-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white text-sm font-medium py-2 px-6 rounded-lg hover:opacity-90 transition duration-300 hover:scale-105"
+            onClick={handleNavigate} // Add navigation handler
+          >
             About us
           </button>
         </div>
