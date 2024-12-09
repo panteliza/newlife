@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import AOS from "aos"; // Import AOS library
+import "aos/dist/aos.css"; // AOS styles
+
 import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
 import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
 import fertilityImg1 from "../assets/mother1.jpg";
@@ -10,6 +13,13 @@ import fertilityImg5 from "../assets/mother5.jpg";
 
 const FertilityOptions = () => {
   const navigate = useNavigate(); // React Router navigation hook
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Animation only occurs once per scroll
+    });
+  }, []);
 
   const options = [
     {
@@ -56,12 +66,6 @@ const FertilityOptions = () => {
 
   return (
     <div>
-      <style>
-        {`
-          /* Animations here */
-        `}
-      </style>
-
       {/* Large screen background */}
       <div
         className="hidden sm:block relative bg-cover bg-center py-16"
@@ -88,7 +92,10 @@ const FertilityOptions = () => {
 const Content = ({ options, navigate }) => (
   <div className="p-8 mx-4">
     {/* Animated Heading */}
-    <h1 className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6 animate-heading">
+    <h1
+      className="text-center text-3xl font-bold text-white md:text-[#019586] mb-6"
+      data-aos="fade-up"
+    >
       Start your journey with Newlife IVF
     </h1>
 
@@ -97,14 +104,14 @@ const Content = ({ options, navigate }) => (
       {options.map((option, index) => (
         <div
           key={index}
-          className={`bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center ${
-            index % 2 === 0 ? "animate-left" : "animate-right"
-          } animation-delay-${index + 1}`}
+          className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center text-center"
+          data-aos="fade-up"
+          data-aos-delay={index * 200} // Staggered animation
         >
           <img
             src={option.image}
             alt={option.title}
-            className="h-32 w-32 object-cover  mb-4 rounded-full"
+            className="h-32 w-32 object-cover mb-4 rounded-full"
           />
           <h2 className="text-lg font-semibold mb-2">{option.title}</h2>
           <p className="text-sm text-gray-600 mb-4">{option.description}</p>
