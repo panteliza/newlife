@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import service1 from "../assets/IMSSI2.png";
 import hover1 from "../assets/a.jpg";
 import service2 from "../assets/LAH2.png";
@@ -18,41 +19,48 @@ const services = [
     description: "In vitro fertilization (IVF) is a medical process that is used to help people with fertility issues.",
     image: service1,
     hoverImage: hover1,
+    link: "/ivf", // Add navigation path
   },
   {
     title: "Intracytoplasmic Sperm Injection (ICSI)",
     description: "Intracytoplasmic Sperm Injection or ICSI treatment is a form of assisted reproductive technology used alongside in vitro fertilization.",
     image: service2,
     hoverImage: hover2,
+    link: "/icsi", // Add navigation path
   },
   {
     title: "Intrauterine Insemination (IUI)",
     description: "Intrauterine insemination (IUI), or artificial insemination, involves inserting sperm through the cervix into the uterus.",
     image: service3,
     hoverImage: hover3,
+    link: "/iui", // Add navigation path
   },
   {
     title: "Laser Assisted Hatching (LAH)",
     description: "Laser Assisted Hatching (LAH) is a technique used to improve implantation during IVF procedures.",
     image: service4,
     hoverImage: hover4,
+    link: "/lah", // Add navigation path
   },
   {
     title: "Egg Freezing",
     description: "Egg freezing, also known as oocyte cryopreservation, is a process within in vitro fertilization to preserve eggs.",
     image: service5,
     hoverImage: hover5,
+    link: "/egg-freezing", // Add navigation path
   },
   {
     title: "Semen Freezing",
     description: "Semen freezing, or sperm cryopreservation, involves preserving sperm at low temperatures for future use.",
     image: service6,
     hoverImage: hover6,
+    link: "/semen-freezing", // Add navigation path
   },
 ];
 
 const Services = () => {
   const [visibleCards, setVisibleCards] = useState([]);
+  const navigate = useNavigate(); // Initialize navigation hook
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,7 +121,10 @@ const Services = () => {
               }}
             >
               <h3 className="text-xl font-bold">{service.title}</h3>
-              <button className="mt-4 px-4 py-2 bg-white text-pink-500 font-semibold rounded-full shadow-md hover:bg-gray-200">
+              <button
+                className="mt-4 px-4 py-2 bg-white text-pink-500 font-semibold rounded-full shadow-md hover:bg-gray-200"
+                onClick={() => navigate(service.link)} // Navigate to the specified page
+              >
                 Read More
               </button>
             </div>

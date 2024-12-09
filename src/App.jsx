@@ -15,6 +15,9 @@ import SecondOpinion from './pages/SecondOpinion';
 import PreserveMyFertility from './pages/PreserveMyFertility';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import IVFInformationPage from './pages/IVFinformationpage';
+import ICSIInformationPage from './pages/ICSIInformationPage';
+import IUIInformationPage from './pages/IUIInformationPage';
 
 
 const App = () => {
@@ -37,6 +40,9 @@ const App = () => {
           <Route path="/preserve-fertility" element={<PreserveMyFertility />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ivf" element={<IVFInformationPage />} />
+          <Route path="/icsi" element={<ICSIInformationPage />} />
+          <Route path="/iui" element={<IUIInformationPage />} />
         </Routes>
 
         {/* WhatsApp button as an image */}
