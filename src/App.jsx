@@ -18,6 +18,7 @@ import Contact from './pages/Contact';
 import IVFInformationPage from './pages/IVFinformationpage';
 import ICSIInformationPage from './pages/ICSIInformationPage';
 import IUIInformationPage from './pages/IUIInformationPage';
+import LAHInformationPage from './pages/LAHInformationPage';
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/ivf" element={<IVFInformationPage />} />
           <Route path="/icsi" element={<ICSIInformationPage />} />
           <Route path="/iui" element={<IUIInformationPage />} />
+          <Route path="/lah" element={<LAHInformationPage />} />
         </Routes>
 
         {/* WhatsApp button as an image */}
