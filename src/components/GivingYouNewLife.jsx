@@ -45,6 +45,15 @@ const GivingYouNewLife = () => {
             }
           }
 
+          @keyframes glow {
+            0% {
+              box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              box-shadow: 0 8px 15px rgba(0, 128, 0, 0.3);
+            }
+          }
+
           .animate-fadeInUp {
             animation: fadeInUp 1s ease-out both;
           }
@@ -52,13 +61,17 @@ const GivingYouNewLife = () => {
           .animate-scaleUp {
             animation: scaleUp 1s ease-out both;
           }
+
+          .animate-glow {
+            animation: glow 1s ease-in-out infinite alternate;
+          }
         `}
       </style>
 
       {/* Title */}
       <div
         ref={titleRef}
-        className={`text-center max-w-4xl mx-auto mb-12 ${
+        className={`text-center max-w-4xl mx-auto mb-12 transition-opacity duration-700 ${
           titleInView ? "animate-fadeInUp" : "opacity-0"
         }`}
       >
@@ -72,14 +85,14 @@ const GivingYouNewLife = () => {
         {/* Card 1 */}
         <div
           ref={card1Ref}
-          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-500 transform ${
             card1InView ? "animate-scaleUp" : "opacity-0"
           }`}
         >
           <img
             src={clinicianIcon}
             alt="Clinician-Owned and Led"
-            className="w-24 h-24 mb-4 rounded-full"
+            className="w-24 h-24 mb-4 rounded-full animate-glow"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Clinician-Owned and Led
@@ -93,14 +106,14 @@ const GivingYouNewLife = () => {
         {/* Card 2 */}
         <div
           ref={card2Ref}
-          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-500 transform ${
             card2InView ? "animate-scaleUp" : "opacity-0"
           }`}
         >
           <img
             src={microscopeIcon}
             alt="Best Scientific Practice for All"
-            className="w-24 h-24 mb-4 rounded-full"
+            className="w-24 h-24 mb-4 rounded-full animate-glow"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Best Scientific Practice for All
@@ -120,14 +133,14 @@ const GivingYouNewLife = () => {
         {/* Card 3 */}
         <div
           ref={card3Ref}
-          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ${
+          className={`flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-500 transform ${
             card3InView ? "animate-scaleUp" : "opacity-0"
           }`}
         >
           <img
             src={supportIcon}
             alt="Genuine Care and Support"
-            className="w-24 h-24 mb-4 rounded-full"
+            className="w-24 h-24 mb-4 rounded-full animate-glow"
           />
           <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wide">
             Genuine Care and Support
