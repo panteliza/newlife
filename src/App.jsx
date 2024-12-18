@@ -4,7 +4,7 @@ import './App.css'; // Add this for styling
 
 import Home from './pages/Home';
 
-import whatsappImage from './assets/whatsapp_733585.png'; // Import WhatsApp image
+import whatsappImage from './assets/whatsapp.png'; // Import WhatsApp image
 import EmbryoScopeDetails from './pages/EmbryoScopeDetails';
 import EmbryoGlueDetails from './pages/EmbryoGlueDetails';
 import EggSpindleDetails from './pages/EggSpindleDetails';
@@ -19,6 +19,8 @@ import IVFInformationPage from './pages/IVFinformationpage';
 import ICSIInformationPage from './pages/ICSIInformationPage';
 import IUIInformationPage from './pages/IUIInformationPage';
 import LAHInformationPage from './pages/LAHInformationPage';
+import EggFreezingPage from './pages/EggFreezingPage';
+import BecomeDonorPage from './pages/BecomeDonorPage';
 
 
 const App = () => {
@@ -45,6 +47,9 @@ const App = () => {
           <Route path="/icsi" element={<ICSIInformationPage />} />
           <Route path="/iui" element={<IUIInformationPage />} />
           <Route path="/lah" element={<LAHInformationPage />} />
+          <Route path="/egg-freezing" element={<EggFreezingPage />} />
+          <Route path="/become-donor" element={<BecomeDonorPage />} />
+
         </Routes>
 
         {/* WhatsApp button as an image */}

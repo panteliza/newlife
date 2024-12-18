@@ -5,11 +5,12 @@ import "aos/dist/aos.css"; // AOS styles
 
 import bgImage from "../assets/bg1.jpg"; // Background image for larger screens
 import bgImageSmall from "../assets/bg2.png"; // Background image for smaller screens
-import fertilityImg1 from "../assets/mother1.jpg";
-import fertilityImg2 from "../assets/mother2.jpg";
-import fertilityImg3 from "../assets/mother3.jpg";
+import fertilityImg1 from "../assets/111.jpg";
+import fertilityImg2 from "../assets/222.jpg";
+import fertilityImg3 from "../assets/333.jpg";
 import fertilityImg4 from "../assets/mother4.jpg";
-import fertilityImg5 from "../assets/mother5.jpg";
+import fertilityImg5 from "../assets/555.jpg";
+import fertilityImg6 from "../assets/666.jpg";
 
 const FertilityOptions = () => {
   const navigate = useNavigate(); // React Router navigation hook
@@ -61,6 +62,14 @@ const FertilityOptions = () => {
         "Learn about freezing your eggs, sperm, or ovarian tissue to preserve fertility for the future.",
       button: "Begin here",
       link: "/preserve-fertility",
+    },
+    {
+      image: fertilityImg6,
+      title: "Become a donor",
+      description:
+        "Learn about donating your eggs, sperm or embryos.",
+      button: "Begin here",
+      link: "/become-donor",
     },
   ];
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import aawazLogo from '../assets/new.png';
 import facebookImg from '../assets/communication_15047435.png';
 import googleImg from '../assets/google-maps_355980.png';
-import whatsappImg from '../assets/whatsapp_733585.png';
+import whatsappImg from '../assets/whatsapp.png';
 
 import { Link } from 'react-router-dom';
 import { HiOutlineMail } from 'react-icons/hi';

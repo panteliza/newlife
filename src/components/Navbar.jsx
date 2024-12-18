@@ -7,7 +7,7 @@ import logo from '../assets/logo.png'; // Main logo
 import logo2 from '../assets/logo2.png'; // Sidebar logo
 import img1 from '../assets/communication_15047435.png'; // Replace with actual path
 import img2 from '../assets/google-maps_355980.png'; // Replace with actual path
-import img3 from '../assets/whatsapp_733585.png'; // Replace with actual path
+import img3 from '../assets/whatsapp.png'; // Replace with actual path
 
 const services = [
   { path: '/ivf-treatment', label: 'IVF (In-Vitro Fertilization) Treatment' },
