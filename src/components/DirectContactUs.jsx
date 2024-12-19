@@ -9,7 +9,7 @@ const DirectContactUs = () => {
     const data = Object.fromEntries(formData.entries());
 
     // Send data via email
-    window.location.href = `mailto:elizapant55@gmail.com?subject=Direct Contact Request&body=Name: ${data.name}%0AEmail: ${data.email}%0AAddress: ${data.address}`;
+    window.location.href = `mailto:newlifeivfnepal@gmail.com?subject=Direct Contact Request&body=Name: ${data.name}%0AEmail: ${data.email}%0AAddress: ${data.address}`;
   };
 
   return (
