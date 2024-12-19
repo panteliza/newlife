@@ -11,6 +11,7 @@ import FertilityOptions from '../components/FertilityOptions'
 import OptionalExtras from '../components/OptionalExtras'
 import GivingYouNewLife from '../components/GivingYouNewLife'
 import Footer from '../components/Footer'
+import DirectContactUs from '../components/DirectContactUs'
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
       
     
     <Reviews/>
+    <DirectContactUs/>
     <Footer/>
     </div>
   )
