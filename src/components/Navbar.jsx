@@ -125,11 +125,18 @@ const Navbar = () => {
               {label}
             </Link>
           ))}
-          <div className="flex gap-4">
-            <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
-            <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
-            <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
-          </div>
+         <div className="flex gap-4">
+  <a href="https://www.facebook.com/share/19eDsZBZR5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
+  </a>
+  <a href="https://www.google.com/maps/dir//Madan+Bhandari+Road,+Kathmandu+44600/@27.6891746,85.2500149,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb190008124681:0x1dd4ad79158758e3!2m2!1d85.3324163!2d27.689199?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+    <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
+  </a>
+  <a href="https://wa.me/9851344422" target="_blank" rel="noopener noreferrer">
+    <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
+  </a>
+</div>
+
         </div>
 
         {/* Mobile Menu Button */}
@@ -183,10 +190,17 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex justify-center gap-4 mt-4 px-6">
-              <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
-              <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
-              <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
-            </div>
+  <a href="https://www.facebook.com/share/19eDsZBZR5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="Icon 1" className="h-[40px] w-[40px] object-contain" />
+  </a>
+  <a href="https://www.google.com/maps/dir//Madan+Bhandari+Road,+Kathmandu+44600/@27.6891746,85.2500149,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb190008124681:0x1dd4ad79158758e3!2m2!1d85.3324163!2d27.689199?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+    <img src={img2} alt="Icon 2" className="h-[40px] w-[40px] object-contain" />
+  </a>
+  <a href="https://wa.me/9851344422" target="_blank" rel="noopener noreferrer">
+    <img src={img3} alt="Icon 3" className="h-[40px] w-[40px] object-contain" />
+  </a>
+</div>
+
           </div>
         )}
       </nav>
