@@ -38,12 +38,7 @@ const DirectContactUs = () => {
               we ensure that every patient receives exceptional care and
               support throughout their journey.
             </p>
-            <a
-              href="#services"
-              className="text-white font-semibold mt-4 inline-block underline hover:text-gray-300"
-            >
-              Learn more
-            </a>
+           
           </div>
 
           {/* Right Form */}
