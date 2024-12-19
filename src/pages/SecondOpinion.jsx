@@ -3,9 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import secondOpinionImage1 from "../assets/baby (5).jpg";
 import secondOpinionImage2 from "../assets/gh.jpg";
-import secondOpinionImage3 from "../assets/gh.jpg";
+
 
 const SecondOpinion = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");
     const observer = new IntersectionObserver(
@@ -118,11 +121,7 @@ const SecondOpinion = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <img
-              src={secondOpinionImage3}
-              alt="What Makes Us Different"
-              className="rounded-lg shadow-lg"
-            />
+           
           </div>
         </div>
       </section>

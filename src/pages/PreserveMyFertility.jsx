@@ -141,7 +141,7 @@ const PreserveMyFertility = () => {
             securing your reproductive future.
           </p>
           <a
-            href="mailto:hello@newlifeivf.com.au"
+            href="mailto:newlifeivfnepal@gmail.com"
             className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition-all duration-300"
           >
             Book a Consultation

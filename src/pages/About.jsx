@@ -13,7 +13,11 @@ import image1 from "../assets/office1.jpeg";
 import image2 from "../assets/office2.jpeg";
 import image3 from "../assets/office3.jpeg";
 import image4 from "../assets/office4.jpeg";
-import image5 from "../assets/mother3.jpg";
+import img1 from "../assets/5555.jpeg";
+import img2 from "../assets/1111.jpeg";
+import img3 from "../assets/7777.jpeg";
+
+
 
 const About = () => {
   const location = useLocation();
@@ -94,6 +98,28 @@ const About = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <img
+                  src={img1}
+                  alt="IVF Lab 1"
+                  className="w-full h-auto object-cover"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={img2}
+                  alt="IVF Lab 1"
+                  className="w-full h-auto object-cover"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={img3}
+                  alt="IVF Lab 1"
+                  className="w-full h-auto object-cover"
+                />
+              </SwiperSlide>
+             
+              <SwiperSlide>
+                <img
                   src={image2}
                   alt="IVF Lab 2"
                   className="w-full h-auto object-cover"
@@ -113,13 +139,7 @@ const About = () => {
                   className="w-full h-auto object-cover"
                 />
               </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={image5}
-                  alt="Mother with Child"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
+             
             </Swiper>
           </div>
         </div>

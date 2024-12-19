@@ -5,6 +5,7 @@ import step1Image from "../assets/ef1.jpg"; // Replace with actual image paths
 import step2Image from "../assets/ef2.jpg";
 import step3Image from "../assets/ef3.jpg";
 
+
 const StartIVFTreatment = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,28 +25,30 @@ const StartIVFTreatment = () => {
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
           }
+
+          .image-animate {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+          }
         `}
       </style>
 
       {/* Hero Section */}
-      <section className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24">
+      <section className="bg-gray-100 py-12 px-6 md:px-16 lg:px-24 animate-on-scroll">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
-              Start IVF Treatment
+            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+              Start Your IVF Journey with Confidence
             </h1>
             <p className="text-gray-600 leading-relaxed">
-              If you have arrived on this page, it means that you and your
-              fertility specialist have decided that IVF treatment is right for
-              you.
+              Embarking on the journey of IVF treatment is a significant step
+              towards building the family of your dreams. This page is your
+              guide to understanding the process and making the most of this
+              life-changing experience.
             </p>
           </div>
           <div className="flex justify-center">
-            <img
-              src={step1Image}
-              alt="Start IVF Treatment"
-              className="rounded-lg shadow-lg"
-            />
+            
           </div>
         </div>
       </section>
@@ -59,15 +62,16 @@ const StartIVFTreatment = () => {
             </h2>
             <p className="text-gray-600 leading-relaxed">
               You and your partner are required to attend several meetings
-              before progressing with IVF treatment, including counseling
-              sessions, finance meetings, and nurse meetings.
+              before progressing with IVF treatment. These include counseling
+              sessions to understand the process, finance meetings to plan for
+              costs, and nurse consultations to discuss medical preparations.
             </p>
           </div>
           <div className="flex justify-center">
             <img
-              src={step2Image}
+              src={step1Image}
               alt="Attend Meetings"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg image-animate"
             />
           </div>
         </div>
@@ -81,15 +85,16 @@ const StartIVFTreatment = () => {
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Your fertility nurse will arrange for your medications to be
-              dispensed. Medications will be ready for pickup at designated
-              pharmacies or treatment centers.
+              dispensed. These medications will be vital for preparing your
+              body for the IVF cycle. Ensure you understand the dosage and
+              schedule as instructed by your nurse.
             </p>
           </div>
           <div className="flex justify-center">
             <img
-              src={step3Image}
+              src={step2Image}
               alt="Collect Medications"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg image-animate"
             />
           </div>
         </div>
@@ -102,15 +107,16 @@ const StartIVFTreatment = () => {
               Step 3: Start Treatment
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Begin your medication as instructed by your fertility nurse. If
-              you encounter any issues, our friendly team is here to help.
+              Begin your medication as instructed by your fertility nurse.
+              During this phase, regular monitoring will be conducted to track
+              your response to the medications and make necessary adjustments.
             </p>
           </div>
           <div className="flex justify-center">
             <img
               src={step3Image}
               alt="Start Treatment"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg image-animate"
             />
           </div>
         </div>

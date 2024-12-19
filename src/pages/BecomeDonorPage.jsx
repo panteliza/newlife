@@ -127,11 +127,11 @@ const BecomeDonorPage = () => {
             <p className="text-lg">
               📞 Call us at{' '}
               <a href="tel:(03)80808933" className="text-blue-600 font-semibold">
-                (03) 8080 8933
+              tel:977 9851344422
               </a>{' '}
               or email{' '}
               <a href="mailto:hello@newlifeivf.com.au" className="text-blue-600 font-semibold">
-                hello@newlifeivf.com.au
+              newlifeivfnepal@gmail.com
               </a>
             </p>
           </div>

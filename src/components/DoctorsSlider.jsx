@@ -5,16 +5,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // Import doctor images
-import doctor1 from "../assets/doctor1.jpg";
+import doctor1 from "../assets/7777.jpeg";
 import doctor2 from "../assets/doctor2.jpg";
-import doctor3 from "../assets/doctor3.jpg";
+
 
 const DoctorsSlider = () => {
   const doctors = [
     {
-      name: "Dr. Asmita Pandey",
+      name: "Dr. Salma Banu",
       description:
-        "MBBS, Dhaka University, Bangladesh MD, Obs/Gyn, Kathmandu Medical College, 1 Year Fellowship in Lilavati Hospital Diploma in Reproductive Medicine, Germany",
+        "MBBS (Bangladesh) MS(Obstetrics & Gynecology) FJMC, Sir Ganga Ram Hospital (Lahore) Diploma in Sexual and Reproductive Medicine (University of SouthWales, UK) ",
       image: doctor1,
     },
     {
@@ -23,12 +23,7 @@ const DoctorsSlider = () => {
         "MBBS, BPKIHS, Dharan MD, Obs/Gyn, AIIMS, India 2 years fellowship in Bangalore Assisted Conception Centre, Bangalore, India",
       image: doctor2,
     },
-    {
-      name: "Dr. John Doe",
-      description:
-        "MBBS, XYZ University, Specialist in Fertility Treatments and Reproductive Medicine. Experience with global clinics in IVF practices.",
-      image: doctor3,
-    },
+   
   ];
 
   return (
