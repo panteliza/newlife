@@ -59,19 +59,19 @@ const Footer = () => {
           </Link>
           <div className="flex gap-2 sm:gap-3">
             <a
-              href="https://www.facebook.com/aawazhearing/"
+              href="https://www.facebook.com/share/19eDsZBZR5/?mibextid=wwXIfr"
               className="transition-transform duration-500 transform hover:scale-110"
             >
               <img src={facebookImg} alt="Facebook" className="w-8 h-8" />
             </a>
             <a
-              href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200"
+              href="https://www.google.com/maps/dir//Madan+Bhandari+Road,+Kathmandu+44600/@27.6891746,85.2500149,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb190008124681:0x1dd4ad79158758e3!2m2!1d85.3324163!2d27.689199?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
               className="transition-transform duration-500 transform hover:scale-110"
             >
               <img src={googleImg} alt="Google" className="w-8 h-8" />
             </a>
             <a
-              href="https://wa.me/9779845192771"
+              href="https://wa.me/9851344422"
               className="transition-transform duration-500 transform hover:scale-110"
             >
               <img src={whatsappImg} alt="WhatsApp" className="w-8 h-8" />
