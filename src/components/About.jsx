@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules"; // Import Swiper modules
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar"; // Import Navbar component
 import Footer from "../components/Footer"; // Import Footer component
 
@@ -15,16 +16,40 @@ import image4 from "../assets/office4.jpeg";
 import image5 from "../assets/mother3.jpg";
 
 const About = () => {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const imageFadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="w-full flex flex-col">
+    <motion.div initial="hidden" animate="visible" className="w-full flex flex-col">
       {/* Navbar */}
       <Navbar />
 
       {/* About Section */}
-      <section className="bg-gray-50 py-12 px-6">
+      <motion.section
+        className="bg-gray-50 py-12 px-6"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
           {/* Text Section */}
-          <div className="md:w-1/2 text-center md:text-left">
+          <motion.div
+            className="md:w-1/2 text-center md:text-left"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               About New Life IVF, Kathmandu
             </h2>
@@ -46,10 +71,15 @@ const About = () => {
               Discover hope, happiness, and the joy of starting your family with
               New Life IVF—your trusted partner in reproductive health.
             </p>
-          </div>
+          </motion.div>
 
           {/* Image Slider Section */}
-          <div className="md:w-1/2">
+          <motion.div
+            className="md:w-1/2"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
             <Swiper
               pagination={{ dynamicBullets: true }}
               navigation={true}
@@ -78,49 +108,24 @@ const About = () => {
                 },
               }}
             >
-              <SwiperSlide>
-                <img
-                  src={image1}
-                  alt="IVF Lab 1"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={image2}
-                  alt="IVF Lab 2"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={image3}
-                  alt="IVF Lab 3"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={image4}
-                  alt="IVF Lab 4"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={image5}
-                  alt="Mother with Child"
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
+              {[image1, image2, image3, image4, image5].map((image, index) => (
+                <SwiperSlide key={index}>
+                  <motion.img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-auto object-cover"
+                    variants={imageFadeIn}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

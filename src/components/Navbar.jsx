@@ -10,15 +10,14 @@ import img2 from '../assets/google-maps_355980.png'; // Replace with actual path
 import img3 from '../assets/whatsapp.png'; // Replace with actual path
 
 const services = [
-  { path: '/ivf-treatment', label: 'IVF (In-Vitro Fertilization) Treatment' },
-  { path: '/iui-treatment', label: 'IUI (Intra-Uterine Insemination) Treatment' },
-  { path: '/male-infertility', label: 'TESA, PESA, and MESA for Male Infertility Treatment' },
-  { path: '/icsi', label: 'ICSI (Intra-Cytoplasmic Sperm Injection)' },
-  { path: '/hsg-testing', label: 'HSG (Hysterosalpingography) Testing' },
-  { path: '/imsi-picsi', label: 'IMSI & PICSI – Advanced Sperm Selection Techniques' },
-  { path: '/donation-services', label: 'Sperm and Egg Donation Services' },
-  { path: '/embryo-glue', label: 'Embryo Glue for Improved IVF Success' },
+  { path: '/ivf', label: 'In Vitro Fertilization (IVF)' },
+  { path: '/icsi', label: 'Intracytoplasmic Sperm Injection (ICSI)' },
+  { path: '/iui', label: 'Intrauterine Insemination (IUI)' },
+  { path: '/lah', label: 'Laser Assisted Hatching (LAH)' },
+  { path: '/egg-freezing', label: 'Egg Freezing' },
+  { path: '/semen-freezing', label: 'Semen Freezing' },
 ];
+
 
 const navLinks = [
   { path: '/about', label: 'About' },

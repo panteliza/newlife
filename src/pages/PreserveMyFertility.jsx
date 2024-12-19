@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import fertilityImage1 from "../assets/lb1.png"; // Replace with the correct image path
+import fertilityImage1 from "../assets/lb1.png";
 import fertilityImage2 from "../assets/lb2.png";
 import fertilityImage3 from "../assets/lb3.png";
-
 
 const PreserveMyFertility = () => {
   const location = useLocation();
@@ -43,73 +42,110 @@ const PreserveMyFertility = () => {
             animation: fadeIn 1s ease-out forwards;
           }
           .animate-on-scroll { opacity: 0; }
+
+          /* Image hover animation */
+          .image-hover {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+          }
+          .image-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          }
         `}
       </style>
+
       <Navbar />
 
       <section className="bg-gray-50 py-12 px-6 md:px-16 lg:px-24">
-        <div className="text-center mb-8 animate-fadeIn">
+        {/* Page Header */}
+        <div className="text-center mb-12 animate-fadeIn">
           <h1 className="text-4xl font-bold text-gray-800">Preserve My Fertility</h1>
-          <p className="text-gray-600 mt-4">
-            Discover ways to safeguard your future fertility with advanced freezing techniques.
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            Explore options to safeguard your reproductive future with advanced fertility preservation techniques. 
+            Whether medical, personal, or career-driven, we've got you covered.
           </p>
         </div>
 
+        {/* Section 1: Medical Reasons */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="animate-on-scroll">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               Medical Reasons for Fertility Preservation
             </h2>
             <p className="text-gray-600 mb-4">
-              Certain medical conditions, such as cancer treatments, can affect fertility. Freezing eggs or sperm offers a solution to preserve reproductive options.
+              Fertility can be impacted by medical treatments like chemotherapy, radiation therapy, or surgeries.
+              Fertility preservation ensures that patients undergoing such treatments have the chance to start a family in the future.
             </p>
             <p className="text-gray-600">
-              Our team is here to provide guidance and options tailored to your needs.
+              Our team offers expert guidance, personalized options, and compassionate care tailored to your medical needs.
             </p>
           </div>
           <img
             src={fertilityImage1}
             alt="Medical Reasons"
-            className="rounded-lg shadow-lg animate-on-scroll"
+            className="rounded-lg shadow-lg image-hover animate-on-scroll"
           />
         </div>
 
+        {/* Section 2: Freezing Process */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
           <img
             src={fertilityImage2}
             alt="Freezing Process"
-            className="rounded-lg shadow-lg animate-on-scroll"
+            className="rounded-lg shadow-lg image-hover animate-on-scroll"
           />
           <div className="animate-on-scroll">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              The Freezing Process
+              Advanced Freezing Process
             </h2>
             <p className="text-gray-600 mb-4">
-              Our freezing process uses cutting-edge technology to ensure the best possible outcomes for fertility preservation.
+              Using cutting-edge cryopreservation techniques, we freeze and store your eggs, sperm, or embryos for future use. 
+              This process ensures maximum viability and success rates for fertility treatments when you're ready.
             </p>
-            <p className="text-gray-600">
-              Learn more about the steps involved and how we ensure your comfort throughout the process.
-            </p>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Non-invasive and painless collection process</li>
+              <li>State-of-the-art laboratories and storage facilities</li>
+              <li>Highly experienced fertility specialists</li>
+            </ul>
           </div>
         </div>
 
+        {/* Section 3: Costs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
           <div className="animate-on-scroll">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               Costs and Considerations
             </h2>
             <p className="text-gray-600 mb-4">
-              We strive to make fertility preservation affordable and accessible. Detailed cost information is available, along with financing options.
+              We are committed to making fertility preservation accessible. Our plans are flexible, and we offer financing options to
+              support your journey.
             </p>
-            <p className="text-gray-600">
-              Contact us for personalized consultations regarding your options and plans.
-            </p>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Transparent pricing with no hidden costs</li>
+              <li>Financing plans to accommodate your budget</li>
+              <li>Insurance guidance and consultation</li>
+            </ul>
           </div>
           <img
             src={fertilityImage3}
             alt="Costs and Considerations"
-            className="rounded-lg shadow-lg animate-on-scroll"
+            className="rounded-lg shadow-lg image-hover animate-on-scroll"
           />
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-blue-600 py-12 px-8 text-center rounded-lg shadow-lg mt-16 animate-on-scroll">
+          <h2 className="text-3xl font-bold text-white mb-4">Take Control of Your Future</h2>
+          <p className="text-white mb-6 max-w-3xl mx-auto">
+            Ready to learn more about fertility preservation? Contact our team today for a consultation and take the first step towards 
+            securing your reproductive future.
+          </p>
+          <a
+            href="mailto:hello@newlifeivf.com.au"
+            className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition-all duration-300"
+          >
+            Book a Consultation
+          </a>
         </div>
       </section>
 

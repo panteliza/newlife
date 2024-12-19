@@ -21,6 +21,7 @@ import IUIInformationPage from './pages/IUIInformationPage';
 import LAHInformationPage from './pages/LAHInformationPage';
 import EggFreezingPage from './pages/EggFreezingPage';
 import BecomeDonorPage from './pages/BecomeDonorPage';
+import SemenFreezingPage from './pages/SemenFreezingPage';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/lah" element={<LAHInformationPage />} />
           <Route path="/egg-freezing" element={<EggFreezingPage />} />
           <Route path="/become-donor" element={<BecomeDonorPage />} />
+          <Route path="/semen-freezing" element={<SemenFreezingPage />} />
 
         </Routes>
 
