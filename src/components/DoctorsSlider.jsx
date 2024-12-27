@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 // Import doctor images
 import doctor1 from "../assets/7777.jpeg";
-import doctor2 from "../assets/doctor2.jpg";
+import doctor2 from "../assets/llb.jpeg";
 
 
 const DoctorsSlider = () => {
@@ -18,9 +18,9 @@ const DoctorsSlider = () => {
       image: doctor1,
     },
     {
-      name: "Dr. Dipti Das",
+      name: "Dr. Salma Banu",
       description:
-        "MBBS, BPKIHS, Dharan MD, Obs/Gyn, AIIMS, India 2 years fellowship in Bangalore Assisted Conception Centre, Bangalore, India",
+        "MBBS (Bangladesh) MS(Obstetrics & Gynecology) FJMC, Sir Ganga Ram Hospital (Lahore) Diploma in Sexual and Reproductive Medicine (University of SouthWales, UK)",
       image: doctor2,
     },
    

@@ -21,6 +21,11 @@ import img17 from "../assets/7777.jpeg";
 import img18 from "../assets/5555.jpeg";
 import img19 from "../assets/8888.jpeg";
 import img20 from "../assets/1111.jpeg";
+import img21 from "../assets/00.jpg";
+import img22 from "../assets/22.jpg";
+import img23 from "../assets/33.jpg";
+import img24 from "../assets/44.jpg";
+import img25 from "../assets/55.jpg";
 
 
 const GalleryPage = () => {
@@ -33,15 +38,21 @@ const GalleryPage = () => {
     img1,
     img3,
     img4,
+    img22,
+ 
+  img23,
     img5,
     img10,
     img11,
     img12,
     img13,
     img14,
+    img24,
+    img25,
     img15,
     img16,
     img17,
+    img21,
     img18,
     img19,
     img20,
